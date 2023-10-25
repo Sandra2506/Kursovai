@@ -92,7 +92,7 @@ void unpackFile(const string& inputFile, const string& keyFile) {
 }
 
 int main() {
-    string inputFile = "packed.bin";
+    string inputFile = "packed.txt";
     string keyFile = "key.txt";
 
     unpackFile(inputFile, keyFile);
