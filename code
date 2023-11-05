@@ -9,6 +9,7 @@
 
 using namespace std;
 
+//Вообще эта часть не нужна 
 // Структура для хранения узла дерева Шеннона-Фано
 struct Node {
     char ch;
@@ -38,6 +39,8 @@ void buildCode(Node* root, string code, unordered_map<char, string>& codes) {
     buildCode(root->left, code + "0", codes);
     buildCode(root->right, code + "1", codes);
 }
+// всё убрать до сюдаво 
+
 
 // Распаковка файла
 void unpackFile(const string& inputFile, const string& keyFile) {
