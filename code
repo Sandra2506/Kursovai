@@ -2,44 +2,10 @@
 //Файл будет закодирован по методу Шеннона-Фано. Приведи пример, как должен выглядеть файл с ключом для этой программы. Идея программы состоит в том, чтобы просто взять и сопоставить закодированный файл и склюнем и вывести раскодированный файл. 
 // Приведи также пример закодированного файла и файла ключа
 #include <iostream>
-#include <fstream>
-#include <vector>
 #include <string>
+#include <fstream>
 #include <unordered_map>
-
 using namespace std;
-
-//Вообще эта часть не нужна 
-// Структура для хранения узла дерева Шеннона-Фано
-struct Node {
-    char ch;
-    int freq;
-    Node* left;
-    Node* right;
-};
-
-// Создание нового узла дерева Шеннона-Фано
-Node* createNode(char ch, int freq, Node* left, Node* right) {
-    Node* node = new Node();
-    node->ch = ch;
-    node->freq = freq;
-    node->left = left;
-    node->right = right;
-    return node;
-}
-
-// Построение таблицы кодирования по дереву Шеннона-Фано
-void buildCode(Node* root, string code, unordered_map<char, string>& codes) {
-    if (root == nullptr) {
-        return;
-    }
-    if (root->left == nullptr && root->right == nullptr) {
-        codes[root->ch] = code;
-    }
-    buildCode(root->left, code + "0", codes);
-    buildCode(root->right, code + "1", codes);
-}
-// всё убрать до сюдаво 
 
 
 // Распаковка файла
@@ -102,4 +68,3 @@ int main() {
 
     return 0;
 }
-
